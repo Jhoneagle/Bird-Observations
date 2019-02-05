@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="form_rarity_type_list">
+        <item>@string/form_rarity_type1</item>
+        <item>@string/form_rarity_type2</item>
+        <item>@string/form_rarity_type3</item>
+    </string-array>
+</resources>

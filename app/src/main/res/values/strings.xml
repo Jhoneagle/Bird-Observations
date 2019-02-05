@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bird Observations</string>
+    <string name="large_text">
+        aa
+    </string>
+
+    <string name="form_description">
+        Settings
+    </string>
+    <string name="form_species_name">Name: </string>
+    <string name="form_notes">Notes: </string>
+    <string name="form_rarity">Rarity: </string>
+
+    <string name="form_rarity_type1">Common</string>
+    <string name="form_rarity_type2">Rare</string>
+    <string name="form_rarity_type3">Extremely rare</string>
+
+    <string name="add_button">Add</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="title_activity_form">FormActivity</string>
+    <string name="action_settings">Settings</string>
+</resources>
