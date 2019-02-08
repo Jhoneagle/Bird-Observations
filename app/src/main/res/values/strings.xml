@@ -13,7 +13,12 @@
     <string name="form_rarity_type2">Rare</string>
     <string name="form_rarity_type3">Extremely rare</string>
 
+    <string name="order_by_name">Name of species</string>
+    <string name="order_by_rarity">Rarity</string>
+    <string name="order_by_time">Time</string>
+
     <string name="add_button">Add</string>
     <string name="cancel_button">Cancel</string>
     <string name="title_activity_form">FormActivity</string>
+    <string name="new_button">New Observation</string>
 </resources>

@@ -5,4 +5,10 @@
         <item>@string/form_rarity_type2</item>
         <item>@string/form_rarity_type3</item>
     </string-array>
+
+    <string-array name="order_list_by">
+        <item>@string/order_by_time</item>
+        <item>@string/order_by_rarity</item>
+        <item>@string/order_by_name</item>
+    </string-array>
 </resources>

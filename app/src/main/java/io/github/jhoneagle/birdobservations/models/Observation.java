@@ -7,13 +7,17 @@ public class Observation {
     public static final String COLUMN_NAME_SPECIES = "nameSpecies";
     public static final String COLUMN_RARITY = "rarity";
     public static final String COLUMN_NOTES = "notes";
+    public static final String COLUMN_IMAGE_ID = "imageId";
+    public static final String COLUMN_GEO_LOCATION = "geolocation";
     public static final String COLUMN_TIMESTAMP = "timestamp";
 
     private int id;
     private String nameOfSpecies;
-    private String timestamp;
     private String rarity;
     private String notes;
+    private int imageId;
+    private String geolocation;
+    private String timestamp;
 
     // Create table SQL query
     public static final String CREATE_TABLE =
@@ -22,18 +26,22 @@ public class Observation {
                     + COLUMN_NAME_SPECIES + " TEXT,"
                     + COLUMN_RARITY + " TEXT,"
                     + COLUMN_NOTES + " TEXT,"
+                    + COLUMN_IMAGE_ID + " INTEGER,"
+                    + COLUMN_GEO_LOCATION + " TEXT,"
                     + COLUMN_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP"
                     + ")";
 
     public Observation() {
     }
 
-    public Observation(int id, String nameOfSpecies, String timestamp, String rarity, String notes) {
+    public Observation(int id, String nameOfSpecies, String timestamp, String rarity, String notes, int imageId, String geolocation) {
         this.id = id;
         this.nameOfSpecies = nameOfSpecies;
         this.timestamp = timestamp;
         this.rarity = rarity;
         this.notes = notes;
+        this.imageId = imageId;
+        this.geolocation = geolocation;
     }
 
     public int getId() {
@@ -74,5 +82,21 @@ public class Observation {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public int getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
+    }
+
+    public String getGeolocation() {
+        return geolocation;
+    }
+
+    public void setGeolocation(String geolocation) {
+        this.geolocation = geolocation;
     }
 }

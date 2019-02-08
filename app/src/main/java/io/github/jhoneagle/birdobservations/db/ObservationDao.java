@@ -45,6 +45,8 @@ public class ObservationDao extends SQLiteOpenHelper implements Dao<Observation,
         values.put(Observation.COLUMN_NAME_SPECIES, save.getNameOfSpecies());
         values.put(Observation.COLUMN_RARITY, save.getRarity());
         values.put(Observation.COLUMN_NOTES, save.getNotes());
+        values.put(Observation.COLUMN_IMAGE_ID, save.getImageId());
+        values.put(Observation.COLUMN_GEO_LOCATION, save.getGeolocation());
 
         long id = db.insert(Observation.TABLE_NAME, null, values);
 
@@ -55,7 +57,7 @@ public class ObservationDao extends SQLiteOpenHelper implements Dao<Observation,
     @Override
     public Observation getOne(Long id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        String[] columns = new String[]{Observation.COLUMN_ID, Observation.COLUMN_NAME_SPECIES, Observation.COLUMN_RARITY, Observation.COLUMN_NOTES, Observation.COLUMN_TIMESTAMP};
+        String[] columns = new String[]{Observation.COLUMN_ID, Observation.COLUMN_NAME_SPECIES, Observation.COLUMN_RARITY, Observation.COLUMN_NOTES, Observation.COLUMN_IMAGE_ID, Observation.COLUMN_GEO_LOCATION, Observation.COLUMN_TIMESTAMP};
         String selection = Observation.COLUMN_ID + "=?";
         String[] selectionValue = new String[]{String.valueOf(id)};
 
@@ -71,7 +73,9 @@ public class ObservationDao extends SQLiteOpenHelper implements Dao<Observation,
                 cursor.getString(cursor.getColumnIndex(Observation.COLUMN_NAME_SPECIES)),
                 cursor.getString(cursor.getColumnIndex(Observation.COLUMN_TIMESTAMP)),
                 cursor.getString(cursor.getColumnIndex(Observation.COLUMN_RARITY)),
-                cursor.getString(cursor.getColumnIndex(Observation.COLUMN_NOTES)));
+                cursor.getString(cursor.getColumnIndex(Observation.COLUMN_NOTES)),
+                cursor.getInt(cursor.getColumnIndex(Observation.COLUMN_IMAGE_ID)),
+                cursor.getString(cursor.getColumnIndex(Observation.COLUMN_GEO_LOCATION)));
 
         cursor.close();
         return note;
@@ -94,6 +98,8 @@ public class ObservationDao extends SQLiteOpenHelper implements Dao<Observation,
                 note.setNameOfSpecies(cursor.getString(cursor.getColumnIndex(Observation.COLUMN_NAME_SPECIES)));
                 note.setRarity(cursor.getString(cursor.getColumnIndex(Observation.COLUMN_RARITY)));
                 note.setNotes(cursor.getString(cursor.getColumnIndex(Observation.COLUMN_NOTES)));
+                note.setImageId(cursor.getInt(cursor.getColumnIndex(Observation.COLUMN_IMAGE_ID)));
+                note.setGeolocation(cursor.getString(cursor.getColumnIndex(Observation.COLUMN_GEO_LOCATION)));
                 note.setTimestamp(cursor.getString(cursor.getColumnIndex(Observation.COLUMN_TIMESTAMP)));
 
                 notes.add(note);
@@ -112,6 +118,8 @@ public class ObservationDao extends SQLiteOpenHelper implements Dao<Observation,
         values.put(Observation.COLUMN_NAME_SPECIES, update.getNameOfSpecies());
         values.put(Observation.COLUMN_RARITY, update.getRarity());
         values.put(Observation.COLUMN_NOTES, update.getNotes());
+        values.put(Observation.COLUMN_IMAGE_ID, update.getImageId());
+        values.put(Observation.COLUMN_GEO_LOCATION, update.getGeolocation());
 
         String where = Observation.COLUMN_ID + " = ?";
         String[] whereValue = new String[]{String.valueOf(update.getId())};
