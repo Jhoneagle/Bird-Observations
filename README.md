@@ -30,4 +30,4 @@ This was intresting project to make espesically as I haven't done much coding in
 
 So ofcourse it was challeging to make the application but also enjoyable in the same time. New things got learned and in my opinion good solution was made after all. 
 
-If i would have to say cons in the application then lack of styling or oversimplified interface maybe. Like I know I could have focused more in the UX designing to make it more visually satisfying. But yeah, didn't do it this time. Also tried to make the application in away that it's easily expandable but you can't really tell if it is that easily expandable before you actually do it.
+If I would have to say cons in the application then lack of styling or oversimplified interface maybe. Like I know I could have focused more in the UX designing to make it more visually satisfying. But yeah, didn't do it this time. Also tried to make the application in away that it's easily expandable but you can't really tell if it is that easily expandable before you actually do it.
