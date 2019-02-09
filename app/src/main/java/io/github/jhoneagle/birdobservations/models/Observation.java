@@ -1,6 +1,11 @@
 package io.github.jhoneagle.birdobservations.models;
 
+/**
+ * Class for Observation object what is used in temporal memory and Observation model that is used to store data in SQL database in a persist way.
+ *
+ */
 public class Observation {
+    // SQL table name and column names.
     public static final String TABLE_NAME = "observations";
 
     public static final String COLUMN_ID = "id";
@@ -10,14 +15,6 @@ public class Observation {
     public static final String COLUMN_IMAGE_ID = "imageId";
     public static final String COLUMN_GEO_LOCATION = "geolocation";
     public static final String COLUMN_TIMESTAMP = "timestamp";
-
-    private int id;
-    private String nameOfSpecies;
-    private String rarity;
-    private String notes;
-    private int imageId;
-    private String geolocation;
-    private String timestamp;
 
     // Create table SQL query
     public static final String CREATE_TABLE =
@@ -30,6 +27,15 @@ public class Observation {
                     + COLUMN_GEO_LOCATION + " TEXT,"
                     + COLUMN_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP"
                     + ")";
+
+    // Actual Observation object starts
+    private int id;
+    private String nameOfSpecies;
+    private String rarity;
+    private String notes;
+    private int imageId;
+    private String geolocation;
+    private String timestamp;
 
     public Observation() {
     }

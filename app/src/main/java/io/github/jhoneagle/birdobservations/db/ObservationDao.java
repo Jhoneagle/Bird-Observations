@@ -1,10 +1,9 @@
 package io.github.jhoneagle.birdobservations.db;
 
-import android.database.sqlite.SQLiteDatabase;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
@@ -12,6 +11,10 @@ import java.util.List;
 
 import io.github.jhoneagle.birdobservations.models.Observation;
 
+/**
+ * Class to implement needed operations to control observation table in the database.
+ * Uses Androids internal SQLite integration to access the database.
+ */
 public class ObservationDao extends SQLiteOpenHelper implements Dao<Observation, Long> {
     // Database Version
     private static final int DATABASE_VERSION = 1;
@@ -68,7 +71,7 @@ public class ObservationDao extends SQLiteOpenHelper implements Dao<Observation,
             cursor.moveToFirst();
         }
 
-        Observation note = new Observation(
+        Observation observation = new Observation(
                 cursor.getInt(cursor.getColumnIndex(Observation.COLUMN_ID)),
                 cursor.getString(cursor.getColumnIndex(Observation.COLUMN_NAME_SPECIES)),
                 cursor.getString(cursor.getColumnIndex(Observation.COLUMN_TIMESTAMP)),
@@ -78,7 +81,7 @@ public class ObservationDao extends SQLiteOpenHelper implements Dao<Observation,
                 cursor.getString(cursor.getColumnIndex(Observation.COLUMN_GEO_LOCATION)));
 
         cursor.close();
-        return note;
+        return observation;
     }
 
     @Override
@@ -93,16 +96,16 @@ public class ObservationDao extends SQLiteOpenHelper implements Dao<Observation,
 
         if (cursor.moveToFirst()) {
             do {
-                Observation note = new Observation();
-                note.setId(cursor.getInt(cursor.getColumnIndex(Observation.COLUMN_ID)));
-                note.setNameOfSpecies(cursor.getString(cursor.getColumnIndex(Observation.COLUMN_NAME_SPECIES)));
-                note.setRarity(cursor.getString(cursor.getColumnIndex(Observation.COLUMN_RARITY)));
-                note.setNotes(cursor.getString(cursor.getColumnIndex(Observation.COLUMN_NOTES)));
-                note.setImageId(cursor.getInt(cursor.getColumnIndex(Observation.COLUMN_IMAGE_ID)));
-                note.setGeolocation(cursor.getString(cursor.getColumnIndex(Observation.COLUMN_GEO_LOCATION)));
-                note.setTimestamp(cursor.getString(cursor.getColumnIndex(Observation.COLUMN_TIMESTAMP)));
+                Observation observation = new Observation();
+                observation.setId(cursor.getInt(cursor.getColumnIndex(Observation.COLUMN_ID)));
+                observation.setNameOfSpecies(cursor.getString(cursor.getColumnIndex(Observation.COLUMN_NAME_SPECIES)));
+                observation.setRarity(cursor.getString(cursor.getColumnIndex(Observation.COLUMN_RARITY)));
+                observation.setNotes(cursor.getString(cursor.getColumnIndex(Observation.COLUMN_NOTES)));
+                observation.setImageId(cursor.getInt(cursor.getColumnIndex(Observation.COLUMN_IMAGE_ID)));
+                observation.setGeolocation(cursor.getString(cursor.getColumnIndex(Observation.COLUMN_GEO_LOCATION)));
+                observation.setTimestamp(cursor.getString(cursor.getColumnIndex(Observation.COLUMN_TIMESTAMP)));
 
-                notes.add(note);
+                notes.add(observation);
             } while (cursor.moveToNext());
         }
 
