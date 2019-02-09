@@ -12,7 +12,7 @@ public class Observation {
     public static final String COLUMN_NAME_SPECIES = "nameSpecies";
     public static final String COLUMN_RARITY = "rarity";
     public static final String COLUMN_NOTES = "notes";
-    public static final String COLUMN_IMAGE_ID = "imageId";
+    public static final String COLUMN_IMAGE_PATH = "imagePath";
     public static final String COLUMN_GEO_LOCATION = "geolocation";
     public static final String COLUMN_TIMESTAMP = "timestamp";
 
@@ -23,7 +23,7 @@ public class Observation {
                     + COLUMN_NAME_SPECIES + " TEXT,"
                     + COLUMN_RARITY + " TEXT,"
                     + COLUMN_NOTES + " TEXT,"
-                    + COLUMN_IMAGE_ID + " INTEGER,"
+                    + COLUMN_IMAGE_PATH + " TEXT,"
                     + COLUMN_GEO_LOCATION + " TEXT,"
                     + COLUMN_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP"
                     + ")";
@@ -33,20 +33,20 @@ public class Observation {
     private String nameOfSpecies;
     private String rarity;
     private String notes;
-    private int imageId;
+    private String imagePath;
     private String geolocation;
     private String timestamp;
 
     public Observation() {
     }
 
-    public Observation(int id, String nameOfSpecies, String timestamp, String rarity, String notes, int imageId, String geolocation) {
+    public Observation(int id, String nameOfSpecies, String timestamp, String rarity, String notes, String imagePath, String geolocation) {
         this.id = id;
         this.nameOfSpecies = nameOfSpecies;
         this.timestamp = timestamp;
         this.rarity = rarity;
         this.notes = notes;
-        this.imageId = imageId;
+        this.imagePath = imagePath;
         this.geolocation = geolocation;
     }
 
@@ -90,12 +90,12 @@ public class Observation {
         this.notes = notes;
     }
 
-    public int getImageId() {
-        return imageId;
+    public String getImagePath() {
+        return imagePath;
     }
 
-    public void setImageId(int imageId) {
-        this.imageId = imageId;
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 
     public String getGeolocation() {

@@ -24,6 +24,9 @@ import com.google.android.gms.location.LocationSettingsStatusCodes;
 
 import static android.content.Context.LOCATION_SERVICE;
 
+/**
+ * CLass to handle actual calls for google location services and it's makeing actions when it gives error.
+ */
 public class LocationHandler {
     private FusedLocationProviderClient fusedLocationProviderClient;
     private LocationManager locationManager;

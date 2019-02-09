@@ -20,7 +20,8 @@
         android:id="@+id/item_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/item_name"
+        android:layout_toEndOf="@id/image"
+        android:layout_below="@id/item_name"
         android:layout_margin="20dp"
         android:textSize="12sp" />
 
@@ -29,6 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/item_date"
+        android:layout_below="@id/item_rarity"
         android:layout_margin="20dp"
         android:textSize="12sp" />
 
@@ -36,7 +38,7 @@
         android:id="@+id/item_notes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/item_rarity"
+        android:layout_toEndOf="@id/image"
         android:layout_below="@id/item_date"
         android:layout_margin="20dp"
         android:textSize="12sp" />
@@ -45,8 +47,7 @@
         android:id="@+id/item_rarity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/image"
-        android:layout_below="@id/item_name"
+        android:layout_toEndOf="@id/item_name"
         android:layout_margin="20dp"
         android:textSize="12sp" />
 

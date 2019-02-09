@@ -51,6 +51,26 @@
         android:layout_height="wrap_content"
         android:entries="@array/form_rarity_type_list" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp" >
+
+        <ImageView
+            android:id="@+id/imgView"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+        <Button
+            android:id="@+id/buttonLoadPicture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="1dp"
+            android:layout_toEndOf="@id/imgView"
+            android:onClick="upload"
+            android:text="@string/load_picture" />
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
